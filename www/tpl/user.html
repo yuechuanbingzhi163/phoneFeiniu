@@ -1,0 +1,164 @@
+<div class="bar bar-header bar-feiniu">
+  <!--<button class="button button-feiniu title">设置</button>-->
+  <h1 class="title light lf">我的</h1>
+  <button class="button button-icon icon ion-log-out light"></button>
+</div>
+<ion-content class="has-header has-footer">
+  <div class="profile feiniu-bg">
+    <div class="pic lf">
+      <img src="img/user/pro.jpg" id="myImage" class="v-middle" ng-click="picture()" />
+      <a href="#/myLogin">登录</a>&nbsp;
+      <a>|</a>&nbsp;
+      <a href="#myRegister">注册</a>
+    </div>
+  </div>
+  <div class="row">
+   <div class="col">
+     <div class="user_box text-center">
+       <i class="icon ion-ios-star"></i>
+       <p>商品收藏</p>
+     </div>
+   </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="icon ion-coffee"></i>
+        <p>店铺收藏</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="icon ion-android-walk"></i>
+        <p>我的足迹</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="fa fa-pencil"></i>
+        <p>签到领积分</p>
+      </div>
+    </div>
+  </div>
+  <div class="myOrder" >
+  <p>
+    <span>我的订单</span>
+      <span class="rf">
+        查看全部订单
+        <i class="icon ion-chevron-right"></i>
+      </span>
+  </p>
+  <div class="row o_content">
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="fa fa-credit-card"></i>
+        <p>待付款</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="fa fa-truck"></i>
+        <p>待发货</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="fa fa-suitcase"></i>
+        <p>待收货</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="fa fa-commenting-o"></i>
+        <p>带评论</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <i class="icon ion-fork-repo"></i>
+        <p>退货</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="myOrder myMoney" >
+    <p>
+      <span>我的资产</span>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="user_box text-center">
+          <i class="fa fa-money"></i>
+          <p>账户余额</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="user_box text-center">
+          <i class="fa fa-vcard-o"></i>
+          <p>购物卡</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="user_box text-center">
+          <i class="icon ion-ios-color-wand-outline"></i>
+          <p>优惠券</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="user_box text-center">
+          <i class="icon ion-ribbon-a"></i>
+          <p>积分</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="user_box text-center">
+          <i class="icon ion-film-marker"></i>
+          <p>卡券充值</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user_fina row">
+    <div class="col">
+      <div class="user_box text-center">
+        <span>
+         <img src="img/user/a01.png"/>
+        </span>
+        <p>账户余额</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <span><img src="img/user/a02.png"/></span>
+        <p>曾经购买</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <span><img src="img/user/a03.png" /></span>
+        <p>我的预售</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="user_box text-center">
+        <span><img src="img/user/a04.png"/></span>
+        <p>积分商城</p>
+      </div>
+    </div>
+  </div>
+  <div class="user_fina row">
+    <div class="col col-25">
+      <div class="user_box text-center">
+        <span class="text-center">
+          <img src="img/user/a05.png"/>
+        </span>
+        <p>账户余额</p>
+      </div>
+    </div>
+    <div class="col col-25">
+      <div class="user_box text-center">
+        <span><img src="img/user/a06.png"/></span>
+        <p>曾经购买</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div ng-include="'tpl/footer.html'"></div>

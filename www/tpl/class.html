@@ -1,0 +1,31 @@
+<div ng-include="'tpl/header.html'"></div>
+<ion-content class="has-header has-footer">
+  <div class="row no-padding">
+    <div class="col col-20 no-padding">
+      <ion-list class="text-center">
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">热门分类</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.fresh')">生鲜冷藏</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.food')">食品酒饮</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">环球进口</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">个护美妆</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">家清厨卫</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">家纺家装</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">母婴玩具</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">手机数码</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">家电汽配</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">女装配饰</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">男装户外</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">鞋靴箱包</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">图书文具</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">保健计生</ion-item>
+        <ion-item class="label-padding text-center stable-bg  label-font" ng-click="jump('class.hot')">礼品卡券</ion-item>
+      </ion-list>
+    </div>
+    <div class="col col-80">
+      <div ui-view></div>
+    </div>
+  </div>
+</ion-content>
+
+
+<div ng-include="'tpl/footer.html'"></div>

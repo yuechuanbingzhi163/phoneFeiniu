@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <link rel="stylesheet" href="css/ionic.css"/>
+  <link rel="stylesheet" href="css/start.css"/>
+  <link rel="stylesheet" href="css/fontawesome.css"/>
+  <script src="js/ionic.bundle.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+  <title>feiniu</title>
+  <style>
+    /*nowrap不让img换行*/
+    .picturesholder{
+      background-color:#fff;
+      width:420px;
+      height:145px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /**图片占满画廊*/
+    .picturesholder img{
+      width:110px;
+      height:110px;
+    }
+    .ion-chevron-down:before{
+      font-size:12px !important;
+    }
+    .ion-ios-location-outline:before{
+      font-size:20px !important;
+    }
+    .ion-chevron-left:before{
+      font-size:23px !important;
+    }
+  </style>
+</head>
+<body ng-controller="myCtrl">
+<div ui-view>
+
+</div>
+<script>
+  var app=angular.module('myApp',['ionic']);
+  app.config(function($ionicConfigProvider,$stateProvider,$urlRouterProvider){
+    $ionicConfigProvider.tabs.position('bottom');
+    $stateProvider
+            .state('start',{
+              url:'/myStart',
+              templateUrl:'tpl/start.html'
+            })
+            .state('class',{
+              url:"/myClass",
+              templateUrl:"tpl/class.html",
+              controller:"classCtrl"
+            })
+            .state('class.hot',{
+              url:"/myHot",
+              templateUrl:"tpl/class/hot.html",
+              controller:"classCtrl"
+            })
+            .state('class.fresh',{
+              url:"/myFresh",
+              templateUrl:"tpl/class/fresh.html",
+              controller:"classCtrl"
+            })
+            .state('class.food',{
+              url:"/myFood",
+              templateUrl:"tpl/class/food.html",
+              controller:"classCtrl"
+            })
+            .state('fruit',{
+              url:"/myFruit",
+              templateUrl:"tpl/class/fruit/fruit.html"
+            })
+            .state('fdetail',{
+              url:"/myFdetail",
+              templateUrl:"tpl/class/fruit/fdetail.html"
+            })
+            .state('center',{
+              url:"/myCenter",
+              templateUrl:"tpl/center.html"
+            })
+            .state('cart',{
+              url:"/myCart",
+              templateUrl:"tpl/cart.html"
+            })
+            .state('ncart',{
+              url:"/myNcart",
+              templateUrl:"tpl/no_login_cart.html"
+            })
+            .state('user',{
+              url:"/myUser",
+              templateUrl:'tpl/user.html',
+              controller:"userCtrl"
+            })
+            .state('login',{
+              url:"/myLogin",
+              templateUrl:'tpl/login.html',
+              controller:"loginCtrl"
+            })
+            .state('register',{
+              url:"/myRegister",
+              templateUrl:'tpl/register.html'
+            })
+    $urlRouterProvider.otherwise('myStart');
+  });
+  app.controller('myCtrl',['$scope','$state',function($scope,$state){
+      $scope.jump=function(arg){
+        $state.go(arg);
+      }
+  }]);
+  app.controller('classCtrl',['$scope','$state',function($scope,$state){
+      $scope.add=function(){
+        console.log('add');
+        this.addClass('label-border');
+      }
+  }])
+  app.controller('loginCtrl',['$scope','$http',function($scope,$http){
+    $scope.info={};
+    $scope.trans=function(){
+      $http.get('data/user_add.php')
+              .success(function(data){
+                console.log(data);
+              })
+    }
+  }])
+  app.controller('userCtrl',['$scope','$ionicActionSheet',function($scope,$ionicActionSheet){
+//    $scope.chooseImag=function() {
+//      console.log('hello world');
+//      navigator.camera.getPicture(
+//              chooseSuccess,
+//              fail,
+//              {
+//                quality:50,
+//                sourceType:Camera.PictureSourceType.PHOTOLIBRARY
+//              }
+//      )
+//    }
+//    function chooseSuccess(imgUrl){
+//      document.getElementById('myImage').src = imgUrl;
+//    }
+//    function fail(){}
+    $scope.picture = function() {
+      $ionicActionSheet.show({
+        buttons: [
+          { text: '相机' },
+          { text: '图库' }
+        ],
+        cancelText: '关闭',
+        cancel: function() {
+          return true;
+        },
+        buttonClicked: function(index) {
+          switch (index){
+            case 0:
+              takePhoto();
+              break;
+            case 1:
+              pickImage();
+              break;
+            default:
+              break;
+          }
+          return true;
+        }
+      });
+    }
+
+
+    //image picker
+    var pickImage = function () {
+      var options = {
+        maximumImagesCount: 1,
+        width: 800,
+        height: 800,
+        quality: 80
+      };
+
+      $cordovaImagePicker.getPictures(options)
+              .then(function (results) {
+                $scope.images_list.push(results[0]);
+                upImage(results[0]);
+              }, function (error) {
+                // error getting photos
+              });
+    }
+    var takePhoto = function () {
+      var options = {
+        //这些参数可能要配合着使用，比如选择了sourcetype是0，destinationtype要相应的设置
+        quality: 100,                                            //相片质量0-100
+        destinationType: Camera.DestinationType.FILE_URI,        //返回类型：DATA_URL= 0，返回作为 base64 編碼字串。 FILE_URI=1，返回影像档的 URI。NATIVE_URI=2，返回图像本机URI (例如，資產庫)
+        sourceType: Camera.PictureSourceType.CAMERA,             //从哪里选择图片：PHOTOLIBRARY=0，相机拍照=1，SAVEDPHOTOALBUM=2。0和1其实都是本地图库
+        allowEdit: false,                                        //在选择之前允许修改截图
+        encodingType: Camera.EncodingType.JPEG,                   //保存的图片格式： JPEG = 0, PNG = 1
+        targetWidth: 200,                                        //照片宽度
+        targetHeight: 200,                                       //照片高度
+        mediaType: 0,                                             //可选媒体类型：圖片=0，只允许选择图片將返回指定DestinationType的参数。 視頻格式=1，允许选择视频，最终返回 FILE_URI。ALLMEDIA= 2，允许所有媒体类型的选择。
+        cameraDirection: 0,                                       //枪后摄像头类型：Back= 0,Front-facing = 1
+        popoverOptions: CameraPopoverOptions,
+        saveToPhotoAlbum: true                                   //保存进手机相册
+      };
+      $cordovaCamera.getPicture(options).then(function (imageData) {
+
+        CommonJs.AlertPopup(imageData);
+        var image = document.getElementById('myImage');
+        image.src = imageData;
+        upImage(imageData);
+        //image.src = "data:image/jpeg;base64," + imageData;
+      }, function (err) {
+        // error
+        CommonJs.AlertPopup(err.message);
+      });
+
+    }
+
+    //图片上传upImage（图片路径）
+    //http://ngcordova.com/docs/plugins/fileTransfer/  资料地址
+    var upImage = function (imageUrl) {
+      document.addEventListener('deviceready', function () {
+        var url = "http://192.168.1.248/api/UserInfo/PostUserHead";
+        var options = {};
+        $cordovaFileTransfer.upload(url, imageUrl, options)
+                .then(function (result) {
+                  alert(JSON.stringify(result.response));
+                  alert("success");
+                  alert(result.message);
+                }, function (err) {
+                  alert(JSON.stringify(err));
+                  alert(err.message);
+                  alert("fail");
+                }, function (progress) {
+                  // constant progress updates
+                });
+
+      }, false)}
+  }]);
+
+</script>
+</body>
+</html>

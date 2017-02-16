@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/css/ionic.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fonts/ionicons.eot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fonts/ionicons.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fonts/ionicons.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fonts/ionicons.woff" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/angular" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/angular-ui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic-angular.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic-angular.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic.bundle.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic.bundle.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/ionic.min.js" charset="UTF-8" />
+  </component>
+</project>

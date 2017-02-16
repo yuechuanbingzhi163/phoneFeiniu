@@ -1,0 +1,199 @@
+html {
+  font-family: Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+li{
+  float:left;
+}
+a{
+  text-decoration:none;
+  color:#333333;
+  font-family: Arial,sans-serif;
+  font-size:10px;
+}
+.rf{
+  float:right;
+}
+.lf{
+  float:left;
+}
+.no-border{
+  border:none;
+}
+.no-padding{
+  padding:0;
+}
+.v-middle{
+  vertical-align:middle;
+}
+.bar.bar-feiniu {
+  border-color: #C70034;
+  background-color: #C70034;
+  background-image: linear-gradient(0deg, #C70034, #C70034 50%, transparent 50%);
+  color: #fff;
+}
+.feiniu{
+  color:#C70034;
+}
+.button.button-feiniu {
+  border-color: transparent;
+  background-color: #C70034;
+  color: #fff; }
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.feiniu-bg{
+  background-color: #C70034;
+}
+.white{
+  color:white;
+}
+.year{
+  background:url('../img/start/bg.png');
+}
+.miao{
+  background:#fff;
+  width:100%;
+}
+/*//class*/
+.label-padding{
+  padding:10px 0 10px 0;
+}
+.label-font{
+  font-size:15px;
+}
+.label-border{
+  border:none;
+  border-bottom:2px solid #fff;
+  border-left:5px solid #C70034;
+}
+/*//fruit.html中样式设置*/
+.m-left{
+  margin-left:10px;
+}
+.m-right{
+
+}
+.ziying-label{
+  width:23px;
+  margin-left:10px;
+  margin-right:5px
+}
+.shop-bg{
+  float:right;
+  border:none;
+  border:0.5px solid #C70034;
+  background:#FFEFEF;
+  border-radius:12px;
+  margin-right:15px;
+}
+.f_intro{
+  font-size:12px;
+  line-height:35px;
+}
+.f_price{
+  font-size:20px;
+}
+.f_discount{
+  float:right;
+  margin-right:15px;
+  display:inline-block;
+  padding:5px;
+  border:1px solid #d5d5d5;
+  font-size:12px;
+  color:#666;
+}
+.f_addr{
+  margin:15px 0 0 0;
+  padding:10px 15px;
+  border-top:10px solid #E5E5E5;
+  border-bottom:10px solid #E5E5E5;
+  font-size:12px;
+}
+.f_addr-m{
+  margin-left:33px;
+  color:#999;
+}
+.f_gray{
+  color:#999;
+}
+.f_score{
+  border-bottom:10px solid #E5E5E5;
+}
+.f_score_t{
+  font-size:12px;
+  padding-left:15px;
+  border-bottom:1px solid #999;
+  height:30px;
+  line-height:30px;
+}
+.f_score_c{
+  padding:10px;
+  font-size:12px;
+  color:#666;
+  overflow:hidden;
+}
+.f_score_c li{
+  padding:0 15px 0 10px;
+}
+.f_comment{
+  padding:0 15px 0 15px;
+}
+.f_comment>p{
+  color:#666;
+  height:30px;
+  line-height:30px;
+}
+/*//未登录购物车样式*/
+.margin-left{
+  margin-left:30px;
+}
+.eee-bg{
+  background:#eee;
+}
+/*我的飞牛演示设置*/
+.profile{
+  padding:15px;
+  overflow:hidden;
+}
+.pic img{
+  width:70px;
+  heihgt:70px;
+  margin-right:30px;
+  border-radius:35px;
+}
+.pic a{
+  color:#fff;
+  font-size:15px;
+}
+.font17{
+  font-size:23px;
+}
+.myOrder{
+  padding:10px;
+  border-bottom:10px solid #eee;
+  border-top:10px solid #eee;
+}
+.myOrder>p{
+  height:25px;
+  border-bottom:1px solid #eee;
+}
+.myMoney{
+  border-top:none;
+}
+.ion-ios-star:before,.ion-coffee:before,.ion-android-walk:before,.fa-credit-card:before,.ion-fork-repo:before,
+.ion-ios-color-wand-outline:before,.ion-ribbon-a:before,.ion-film-marker:before{
+  font-size:23px;
+}
+.fa+p{
+  margin-top:3px;
+}
+.user_fina .col img{
+  width:23px;
+}
